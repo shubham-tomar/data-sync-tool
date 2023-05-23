@@ -24,6 +24,7 @@ fn main() {
         .create()
         .expect("Producer creation failed");
 
+    // Subscribe to kafka topic from which your application will consume
     consumer
         .subscribe(&["dbserver1.inventory.orders"])
         .expect("Can't subscribe to specified topic");
@@ -51,7 +52,7 @@ fn main() {
                 println!("Formated payload: {}", log);
 
                 let delivery_status = producer.send(
-                    BaseRecord::to("test-topic1")
+                    BaseRecord::to("test-topic1") // topic which clickhouse will consume from
                         .payload(&log)
                         .key("some-key"),
                 );
