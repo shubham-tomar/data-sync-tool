@@ -3,7 +3,7 @@ syncing tool for different data sources, unified application for ETLs and stream
 
 # rust-kafka Application
 - This application will capture INSERT/UPDATE operation on MySQL and push data to Clickhouse in realtime
-- Tools used (MySQL, Kafka, Debezium, Clickhouse, Docker) and Language: Rust, Detailed steps on
+- Tools used (MySQL, Kafka, Debezium, Clickhouse, Docker, zookepper) and Language: Rust, Detailed steps on
   how to run this app can be found in: https://github.com/shubham-tomar/data-sync-tool/blob/main/rust_kafka/helper_docs.txt
 - This application is build for Change Data Capture (CDC) use case.
 - Once this application is running, any insert/update/delete made in MYSQL will go to kafka topic t1 (via debezium) 
