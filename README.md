@@ -11,3 +11,8 @@ syncing tool for different data sources, unified application for ETLs and stream
 - We are using clickhouse as Analytics DB, where we will be running queue which will read data from this topic t2
 - Once data is there in clickhouse queue table, our materialized view will be triggerd, where we can perform any aggregations if required 
 - Once MV is triggered it will push data to main table which can be used for analytical queries
+
+# json-to-ndjson
+- While using bqcli i faced an issue where all the data is returned as array of json
+- This application parse this array of json to json Each Row (with transformations if required)
+- further i needed to do this for mulitple files so wrote a small bash script to perform this parallely in 10 files batch
