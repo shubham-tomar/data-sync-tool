@@ -16,3 +16,8 @@ syncing tool for different data sources, unified application for ETLs and stream
 - While using bqcli i faced an issue where all the data is returned as array of json
 - This application parse this array of json to json Each Row (with transformations if required)
 - further i needed to do this for mulitple files so wrote a small bash script to perform this parallely in 10 files batch
+eg: Input:
+[{"col1": "False", "amount": "123.50", "tax_amount": "12"}, {"col1": "1", "amount": "113.50", "tax_amount": "12.5"}]
+output:
+{"col1": false, "amount": 123.5, "tax_amount": 12}
+{"col1": true, "amount": 113.5, "tax_amount": 12.5}
